@@ -14,3 +14,4 @@ for group in grouped_contents:
         datafile.write(mat.format(item[0], item[1].strip()) + "\t")
     print('\n')
     datafile.write("\n")
+# add a blank line
