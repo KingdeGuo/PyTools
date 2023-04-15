@@ -17,10 +17,12 @@ def psnr2(img1, img2):
     return 20 * math.log10(PIXEL_MAX / math.sqrt(mse))
 
 
-gt = cv2.imread('images/5.jpg')
-img = cv2.imread('images/6.jpg')
+for i in range(1, 12, 2):
+    gt = cv2.imread('images2/' + str(i) +'.jpg')
+    img = cv2.imread('images2/' + str(i+1) + '.jpg')
 
-gt = cv2.resize(gt, (img.shape[1], img.shape[0]))
+    gt = cv2.resize(gt, (img.shape[1], img.shape[0]))
 
-print(psnr1(gt, img))
-print(psnr2(gt, img))
+    print(psnr1(gt, img))
+    print(psnr2(gt, img))
+    print("===================")
